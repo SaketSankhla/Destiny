@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Destiny AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand" onclick="window.location.href='home.html'">
+                <span class="brand-icon">✦</span>
+                <span class="brand-text">Destiny</span>
+            </div>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">Explore</a>
+                <a href="planner.html" class="nav-link">AI Planner</a>
+                <a href="trips.html" class="nav-link">My Trips</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="login-main">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <h1 class="login-title">Welcome to <span class="gradient-text">Destiny</span></h1>
+                    <p class="login-subtitle">Start your journey to unforgettable adventures</p>
+                </div>
+
+                <form id="loginForm" class="login-form">
+                    <div class="form-group">
+                        <label class="form-label">Your Name</label>
+                        <input 
+                            type="text" 
+                            id="nameInput" 
+                            class="form-input" 
+                            placeholder="Enter your name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="emailInput" 
+                            class="form-input" 
+                            placeholder="Enter your email"
+                            required
+                        >
+                    </div>
+
+                    <button type="submit" class="login-submit-btn">
+                        Continue
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+
+                <div class="login-footer">
+                    <p class="footer-note">By continuing, you agree to Destiny's Terms of Service and Privacy Policy</p>
+                </div>
+            </div>
+
+            <div class="login-visual">
+                <div class="visual-content">
+                    <div class="visual-icon">✨</div>
+                    <h2 class="visual-title">AI-Powered Travel Planning</h2>
+                    <p class="visual-text">Create personalized itineraries in seconds, tailored to your preferences and budget</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Instant itinerary generation</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Refine with natural chat</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Budget estimates included</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-check">✓</span>
+                            <span>Save unlimited trips</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+</html>

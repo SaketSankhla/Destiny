@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destiny AI - Explore India</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">✦</span>
+                <span class="brand-text">Destiny</span>
+            </div>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link active">Explore</a>
+                <a href="planner.html" class="nav-link">AI Planner</a>
+                <a href="trips.html" class="nav-link">My Trips</a>
+            </div>
+            <div class="nav-auth" id="navAuth">
+                <a href="login.html" class="login-btn" id="loginBtn">Login</a>
+                <div class="profile-dropdown" id="profileDropdown" style="display: none;">
+                    <button class="profile-btn" id="profileBtn">
+                        <span id="userInitial">U</span>
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="trips.html" class="dropdown-item">My Trips</a>
+                        <button class="dropdown-item logout" id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Your Journey,<br>
+                    <span class="gradient-text">Intelligently Crafted</span>
+                </h1>
+                <p class="hero-subtitle">AI-powered travel planning for the modern explorer. Discover India's hidden gems with personalized itineraries in seconds.</p>
+                <a href="planner.html" class="cta-button">
+                    Start Planning
+                    <span class="button-arrow">→</span>
+                </a>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">🏰</div>
+                    <div class="card-text">Historic Forts</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">🏜️</div>
+                    <div class="card-text">Desert Safari</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">🎨</div>
+                    <div class="card-text">Cultural Tours</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-searches" id="recentSearchesSection" style="display: none;">
+            <div class="section-container">
+                <h2 class="section-title">Recent Searches</h2>
+                <div class="search-tags" id="recentSearches"></div>
+            </div>
+        </section>
+
+        <section class="destinations">
+            <div class="section-container">
+                <h2 class="section-title">Explore Rajasthan</h2>
+                <p class="section-subtitle">AI-powered planning currently available for these magnificent destinations</p>
+                
+                <div class="destination-grid">
+                    <div class="destination-card" data-city="Jaipur">
+                        <div class="destination-image jaipur"></div>
+                        <div class="destination-content">
+                            <h3 class="destination-name">Jaipur</h3>
+                            <p class="destination-desc">The Pink City</p>
+                            <button class="plan-btn" onclick="planCity('Jaipur')">Plan Trip →</button>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" data-city="Udaipur">
+                        <div class="destination-image udaipur"></div>
+                        <div class="destination-content">
+                            <h3 class="destination-name">Udaipur</h3>
+                            <p class="destination-desc">City of Lakes</p>
+                            <button class="plan-btn" onclick="planCity('Udaipur')">Plan Trip →</button>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" data-city="Jodhpur">
+                        <div class="destination-image jodhpur"></div>
+                        <div class="destination-content">
+                            <h3 class="destination-name">Jodhpur</h3>
+                            <p class="destination-desc">The Blue City</p>
+                            <button class="plan-btn" onclick="planCity('Jodhpur')">Plan Trip →</button>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" data-city="Jaisalmer">
+                        <div class="destination-image jaisalmer"></div>
+                        <div class="destination-content">
+                            <h3 class="destination-name">Jaisalmer</h3>
+                            <p class="destination-desc">The Golden City</p>
+                            <button class="plan-btn" onclick="planCity('Jaisalmer')">Plan Trip →</button>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" data-city="Bikaner">
+                        <div class="destination-image bikaner"></div>
+                        <div class="destination-content">
+                            <h3 class="destination-name">Bikaner</h3>
+                            <p class="destination-desc">Camel Country</p>
+                            <button class="plan-btn" onclick="planCity('Bikaner')">Plan Trip →</button>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" data-city="Pushkar">
+                        <div class="destination-image pushkar"></div>
+                        <div class="destination-content">
+                            <h3 class="destination-name">Pushkar</h3>
+                            <p class="destination-desc">Sacred Lake Town</p>
+                            <button class="plan-btn" onclick="planCity('Pushkar')">Plan Trip →</button>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" data-city="Ajmer">
+                        <div class="destination-image ajmer"></div>
+                        <div class="destination-content">
+                            <h3 class="destination-name">Ajmer</h3>
+                            <p class="destination-desc">Sufi Heritage</p>
+                            <button class="plan-btn" onclick="planCity('Ajmer')">Plan Trip →</button>
+                        </div>
+                    </div>
+
+                    <div class="destination-card" data-city="Mount Abu">
+                        <div class="destination-image mount-abu"></div>
+                        <div class="destination-content">
+                            <h3 class="destination-name">Mount Abu</h3>
+                            <p class="destination-desc">Hill Station Retreat</p>
+                            <button class="plan-btn" onclick="planCity('Mount Abu')">Plan Trip →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="section-container">
+                <h2 class="section-title">Why Destiny AI?</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Instant Planning</h3>
+                        <p class="feature-desc">Generate comprehensive itineraries in seconds using advanced AI</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎯</div>
+                        <h3 class="feature-title">Personalized Routes</h3>
+                        <p class="feature-desc">Tailored to your preferences, budget, and travel style</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💬</div>
+                        <h3 class="feature-title">Refine with Chat</h3>
+                        <p class="feature-desc">Adjust your itinerary through natural conversation</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <h3 class="feature-title">Budget Estimates</h3>
+                        <p class="feature-desc">Clear cost breakdowns for every trip</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <span class="brand-icon">✦</span>
+                <span class="brand-text">Destiny</span>
+            </div>
+            <p class="footer-text">AI-powered travel planning for India</p>
+        </div>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+</html>

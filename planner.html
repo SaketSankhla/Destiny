@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Planner - Destiny AI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="planner.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand" onclick="window.location.href='home.html'">
+                <span class="brand-icon">✦</span>
+                <span class="brand-text">Destiny</span>
+            </div>
+            <div class="nav-links">
+                <a href="home.html" class="nav-link">Explore</a>
+                <a href="planner.html" class="nav-link active">AI Planner</a>
+                <a href="trips.html" class="nav-link">My Trips</a>
+            </div>
+            <div class="nav-auth" id="navAuth">
+                <a href="login.html" class="login-btn" id="loginBtn">Login</a>
+                <div class="profile-dropdown" id="profileDropdown" style="display: none;">
+                    <button class="profile-btn" id="profileBtn">
+                        <span id="userInitial">U</span>
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="trips.html" class="dropdown-item">My Trips</a>
+                        <button class="dropdown-item logout" id="logoutBtn">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="planner-main">
+        <div class="planner-container">
+            <div class="planner-header">
+                <h1 class="planner-title">Plan Your <span class="gradient-text">Perfect Journey</span></h1>
+                <p class="planner-subtitle">Tell us your preferences and let our AI craft a personalized itinerary</p>
+            </div>
+
+            <div class="planner-content">
+                <div class="input-section">
+                    <div class="input-card">
+                        <h2 class="card-title">Trip Details</h2>
+                        
+                        <form id="plannerForm" class="planner-form">
+                            <div class="form-group">
+                                <label class="form-label">Destination City</label>
+                                <input 
+                                    type="text" 
+                                    id="cityInput" 
+                                    class="form-input" 
+                                    placeholder="e.g., Jaipur, Udaipur..."
+                                    required
+                                    list="cityList"
+                                >
+                                <datalist id="cityList">
+                                    <option value="Jaipur">
+                                    <option value="Udaipur">
+                                    <option value="Jodhpur">
+                                    <option value="Jaisalmer">
+                                    <option value="Bikaner">
+                                    <option value="Pushkar">
+                                    <option value="Ajmer">
+                                    <option value="Mount Abu">
+                                </datalist>
+                                <p class="form-hint">Currently supports Rajasthan cities only</p>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Number of Days</label>
+                                    <input 
+                                        type="number" 
+                                        id="daysInput" 
+                                        class="form-input" 
+                                        placeholder="e.g., 3"
+                                        min="1"
+                                        max="14"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Adults</label>
+                                    <input 
+                                        type="number" 
+                                        id="adultsInput" 
+                                        class="form-input" 
+                                        placeholder="e.g., 2"
+                                        min="1"
+                                        max="10"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label">Kids</label>
+                                    <input 
+                                        type="number" 
+                                        id="kidsInput" 
+                                        class="form-input" 
+                                        placeholder="0"
+                                        min="0"
+                                        max="10"
+                                        value="0"
+                                    >
+                                </div>
+                            </div>
+
+                            <button type="submit" class="generate-btn" id="generateBtn">
+                                <span class="btn-text">Generate Itinerary</span>
+                                <span class="btn-icon">✨</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="chat-section" id="chatSection" style="display: none;">
+                        <div class="chat-card">
+                            <h3 class="chat-title">Refine Your Trip</h3>
+                            <div class="chat-input-container">
+                                <input 
+                                    type="text" 
+                                    id="chatInput" 
+                                    class="chat-input" 
+                                    placeholder="e.g., Add adventure activities, reduce budget..."
+                                >
+                                <button id="sendChatBtn" class="send-btn">
+                                    <span>→</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="results-section" id="resultsSection">
+                    <div class="loading-spinner" id="loadingSpinner" style="display: none;">
+                        <div class="spinner"></div>
+                        <p class="loading-text">Crafting your perfect itinerary...</p>
+                    </div>
+
+                    <div id="itineraryResults" class="itinerary-results"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="planner.js"></script>
+</body>
+</html>
